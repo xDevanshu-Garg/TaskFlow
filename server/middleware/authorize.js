@@ -1,0 +1,12 @@
+const ApiError = require('../utils/ApiError');
+
+const authorize = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(new ApiError('Not authorized to access this route', 403));
+    }
+    next();
+  };
+};
+
+module.exports = { authorize };
