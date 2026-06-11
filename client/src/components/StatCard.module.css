@@ -46,3 +46,19 @@
   color: var(--text-muted);
   font-weight: 500;
 }
+
+@media (max-width: 640px) {
+  .card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+
+  .iconWrap {
+    width: 36px;
+    height: 36px;
+  }
+}

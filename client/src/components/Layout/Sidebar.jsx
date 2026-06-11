@@ -3,6 +3,9 @@ import { useAuth } from '../../context/AuthContext'
 import {
   LayoutDashboard,
   CheckSquare,
+  Users,
+  ListTodo,
+  Activity,
   LogOut,
   X,
   Zap,
@@ -14,8 +17,14 @@ const userLinks = [
   { to: '/tasks', label: 'My Tasks', icon: CheckSquare },
 ]
 
+const adminLinks = [
+  { to: '/admin/users', label: 'Users', icon: Users },
+  { to: '/admin/tasks', label: 'All Tasks', icon: ListTodo },
+  { to: '/admin/activity-logs', label: 'Activity Logs', icon: Activity },
+]
+
 export default function Sidebar({ isOpen, onClose }) {
-  const { user, logout } = useAuth()
+  const { user, logout, isAdmin } = useAuth()
   const location = useLocation()
 
   return (
@@ -49,6 +58,25 @@ export default function Sidebar({ isOpen, onClose }) {
               </NavLink>
             ))}
           </div>
+
+          {isAdmin && (
+            <div className={styles.navSection}>
+              <span className={styles.sectionLabel}>Admin</span>
+              {adminLinks.map((link) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `${styles.navLink} ${isActive ? styles.active : ''}`
+                  }
+                  onClick={onClose}
+                >
+                  <link.icon size={18} />
+                  <span>{link.label}</span>
+                </NavLink>
+              ))}
+            </div>
+          )}
         </nav>
 
         <div className={styles.userSection}>

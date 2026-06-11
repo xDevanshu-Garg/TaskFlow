@@ -84,6 +84,12 @@
   padding-left: 40px !important;
 }
 
+@media (max-width: 480px) {
+  .card {
+    padding: 28px 20px;
+  }
+}
+
 .footer {
   text-align: center;
   margin-top: 24px;

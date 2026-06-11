@@ -7,6 +7,9 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Tasks from './pages/Tasks'
+import UserManagement from './pages/admin/UserManagement'
+import TaskMonitoring from './pages/admin/TaskMonitoring'
+import ActivityLogs from './pages/admin/ActivityLogs'
 
 function App() {
   return (
@@ -32,6 +35,13 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/tasks" element={<Tasks />} />
+
+            {/* Admin-only routes */}
+            <Route element={<ProtectedRoute requireAdmin />}>
+              <Route path="/admin/users" element={<UserManagement />} />
+              <Route path="/admin/tasks" element={<TaskMonitoring />} />
+              <Route path="/admin/activity-logs" element={<ActivityLogs />} />
+            </Route>
           </Route>
         </Route>
 

@@ -10,6 +10,8 @@ const errorHandler = require('./middleware/errorHandler');
 // Route imports
 const authRoutes = require('./routes/auth.routes');
 const taskRoutes = require('./routes/task.routes');
+const adminRoutes = require('./routes/admin.routes');
+const activityLogRoutes = require('./routes/activityLog.routes');
 
 // Connect to database
 connectDB();
@@ -25,6 +27,8 @@ app.use(express.json());
 // Mount routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/activity-logs', activityLogRoutes);
 
 // Health check
 app.get('/', (req, res) => {

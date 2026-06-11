@@ -147,7 +147,6 @@ Automatic tracking of:
 │   └── .env.example
 │
 ├── README.md
-├── PERSONAL_NOTES.md
 └── .gitignore
 ```
 
