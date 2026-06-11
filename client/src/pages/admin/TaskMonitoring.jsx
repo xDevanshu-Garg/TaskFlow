@@ -85,10 +85,10 @@ export default function TaskMonitoring() {
             <thead>
               <tr>
                 <th>Title</th>
-                <th>Created By</th>
+                <th className={styles.creatorCol}>Created By</th>
                 <th>Status</th>
                 <th>Priority</th>
-                <th>Due Date</th>
+                <th className={styles.dateCol}>Due Date</th>
                 <th style={{ width: 80 }}>Actions</th>
               </tr>
             </thead>
@@ -98,14 +98,14 @@ export default function TaskMonitoring() {
                   <td>
                     <span className={styles.taskTitle}>{task.title}</span>
                   </td>
-                  <td>
+                  <td className={styles.creatorCol}>
                     <span className={styles.creator}>
                       {task.createdBy?.name || task.createdBy?.email || '—'}
                     </span>
                   </td>
                   <td><StatusBadge status={task.status} /></td>
                   <td><StatusBadge status={task.priority} /></td>
-                  <td>
+                  <td className={styles.dateCol}>
                     <span className={styles.date}>
                       {task.dueDate ? (
                         <>

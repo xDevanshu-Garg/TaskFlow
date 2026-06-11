@@ -83,3 +83,10 @@
   background: rgba(239, 68, 68, 0.1);
   color: var(--danger);
 }
+
+@media (max-width: 640px) {
+  .creatorCol,
+  .dateCol {
+    display: none;
+  }
+}

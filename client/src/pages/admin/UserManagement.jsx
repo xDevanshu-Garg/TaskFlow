@@ -89,8 +89,8 @@ export default function UserManagement() {
             <thead>
               <tr>
                 <th>User</th>
-                <th>Email</th>
-                <th>Role</th>
+                <th className={styles.emailCol}>Email</th>
+                <th className={styles.roleCol}>Role</th>
                 <th>Status</th>
                 <th style={{ width: 120 }}>Actions</th>
               </tr>
@@ -106,10 +106,10 @@ export default function UserManagement() {
                       <span className={styles.userName}>{user.name}</span>
                     </div>
                   </td>
-                  <td>
+                  <td className={styles.emailCol}>
                     <span className={styles.email}>{user.email}</span>
                   </td>
-                  <td>
+                  <td className={styles.roleCol}>
                     <div className={styles.roleChip}>
                       {user.role === 'Admin' && <Shield size={12} />}
                       {user.role}

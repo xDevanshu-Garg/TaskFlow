@@ -118,3 +118,15 @@
   background: rgba(239, 68, 68, 0.1);
   color: var(--danger);
 }
+
+@media (max-width: 640px) {
+  .searchWrap {
+    max-width: 100%;
+  }
+
+  /* hide email and role columns on small screens */
+  .emailCol,
+  .roleCol {
+    display: none;
+  }
+}
