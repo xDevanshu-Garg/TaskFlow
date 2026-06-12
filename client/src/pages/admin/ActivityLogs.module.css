@@ -105,3 +105,20 @@
   font-size: 0.8125rem;
   color: var(--text-muted);
 }
+
+@media (max-width: 480px) {
+  .filterGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .filterGroup select {
+    width: 100%;
+  }
+
+  .pagination {
+    gap: 8px;
+  }
+}
