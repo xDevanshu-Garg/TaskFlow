@@ -185,6 +185,10 @@
     display: flex;
   }
 
+  .nav {
+    flex: 0 1 auto;
+  }
+
   .backdrop {
     display: block;
     position: fixed;
@@ -193,3 +197,4 @@
     z-index: 99;
   }
 }
+
